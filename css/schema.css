@@ -1,0 +1,154 @@
+/*
+ * Globals
+ */
+/*.col-md-6 {border:1px solid red;}*/
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+}
+
+
+/*
+ * Base structure
+ */
+
+body {
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+
+/*
+ * Header
+ */
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.duplicate-me {
+  visibility: hidden;
+  display: none;
+}
+
+/* Dropdown checklist */
+#schema-list {
+  display: inline-block;
+  text-align:center;
+  margin-bottom: 2em;
+}
+
+#schema-list ul.items {
+  padding: 2px;
+  margin: 0;
+  width: 40em;
+  display: flex;
+  justify-content:space-around;
+  list-style-type:none;
+}
+
+#schema-list ul.items li {
+  list-style: none;
+}
+
+#schema-list ul.items li label {
+  padding-left: 5px;
+  font-size: large;
+}
+
+#schema-list .anchor {
+  color: #0094ff;
+}
+
+#schema-list form {
+  margin-top:10px;
+}
+
+/* Schema Form */
+.schema-forms {
+  padding-bottom: 1em;
+}
+
+.schema-forms .form {
+  display: none;
+  text-align: left;
+  padding-top: 1em;
+}
+
+.schema-forms .form.show {
+  display: block;
+}
+
+#bcform > span, #product-form > span, #service-form > span, #webpage-form > span, #faqpage-form > span {
+  margin-bottom: 1em;
+}
+
+/* Generated Schema */
+pre {
+  display: none;
+  text-align: left;
+}
+.generated-schema {
+  position:relative;
+  overflow:visible;
+  margin-top: 50px;
+}
+.generated-schema span {
+  color:goldenrod;
+  font-weight: bold;
+}
+.dlicon {
+  height:60px;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 0;
+}
+.generated-schema span.plain {
+  color: #fff;
+  font-weight: normal;
+}
+
+/* Bootstrap floating forms */
+
+.form-control {
+  background-color: rgb(33,37,41) ;
+  color:#fff;
+}
+.form-control:focus{
+  background-color: rgb(33,37,41) ;
+  color:#fff;
+}
+.form-floating label {
+  left: 10px
+}
+label.active {
+  opacity: .15 !important;
+  top: -3px;
+}

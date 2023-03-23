@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Basic SEO Schema Generator</title>
+
+    
+
+    <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="css/schema.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    
+<div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <main>
+    <div>
+      <h1>Generate Your Schema Here</h1>
+      <div id="schema-list" class="">
+        <span class="anchor">Select schema types</span>
+        <ul class="items">
+          <li><input type="checkbox" name="article" value="article" /><label for="article">Article</label></li>
+          <li><input type="checkbox" name="bclist" value="bclist" /><label for="bclist">Breadcrumb</label></li>
+          <li><input type="checkbox" name="product" value="product" /><label for="product">Product</label></li>
+          <li><input type="checkbox" name="service" value="service" /><label for="service">Service</label></li>
+          <li><input type="checkbox" name="webpage" value="webpage" /><label for="webpage">Web Page</label></li>
+          <li><input type="checkbox" name="faqpage" value="faqpage" /><label for="faqpage">FAQ Page</label></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 schema-forms">
+        <div class="general form show">
+          <h3>General Form Info</h3>
+          <form class="row" name="defaultURL">
+            <div class="form-floating col-md-6 mb-1">
+              <input type="text" class="form-control" name="site-url" id="site-url" placeholder="url">
+              <label>Site URL</label>
+            </div>
+            <div class="form-floating col-md-6 mb-1">
+              <input type="text" class="form-control" name="site-urlHierarchy" id="site-urlHierarchy" placeholder="subfolder">
+              <label>Site Subfolder</label>
+          </div>
+          </form>
+          <form class="row" name="filename">
+            <div class="form-floating col-md-11">
+              <input type="text" class="form-control" name="schema-filename" id="schema-filename" placeholder="Schema Filename">
+              <label>Schema filename</label>
+            </div>
+            <div class="col-md-1 g-0 mt-auto">.json</div>
+          </form>
+        </div>
+        <div class="article form">
+          <form class="row" name="article">
+            <h3>Article</h3>
+            <div class="form-floating col-md-6 mb-1">
+              <input type="text" class="form-control" name="article-headline" id="article-headline" placeholder="Headline">
+              <label>Article Headline</label>
+            </div>
+            <div class="form-floating col-md-6 mb-1">
+              <input type="text" class="form-control" name="article-altHeadline" id="article-altHeadline" placeholder="Alt Headline">
+              <label>Alt Headline</label>
+            </div>
+            <div class="form-floating col-md-12 mb-1">
+              <input type="text" class="form-control" name="article-imageURL" id="article-imageURL" placeholder="Image Url">
+              <label>Image Url</label>
+            </div>
+            <div class="form-floating col-md-6 mb-1">
+              <input type="text" class="form-control" name="article-imageName" id="article-imageName" placeholder="Image Name">
+              <label>Image Name</label>
+            </div>
+            <div class="form-floating col-md-6 mb-1">
+              <input type="text" class="form-control" name="article-imageCap" id="article-imageCap" placeholder="Image Caption">
+              <label>Image Caption</label>
+            </div>
+            <div class="form-floating col-md-6 mb-1">
+              <input type="text" class="form-control" name="article-imageW" id="article-imageW" placeholder="Image Width">
+              <label>Image Width</label>
+            </div>
+            <div class="form-floating col-md-6 mb-1">
+              <input type="text" class="form-control" name="article-imageH" id="article-imageH" placeholder="Image Height">
+              <label>Image Height</label>
+            </div>
+            <div class="form-floating col-md-6 mb-1">
+              <input type="text" class="form-control" name="article-keywords" id="article-keywords" placeholder="Keywords">
+              <label>Keywords</label>
+            </div>
+            <div class="form-floating col-md-6 mb-1">
+              <input type="text" class="form-control" name="article-wordcount" id="article-wordcount" placeholder="Word Count">
+              <label>Word Count</label>
+            </div>
+            <div class="form-floating col-md-6 mb-1">
+              <input type="text" class="form-control" name="article-authName" id="article-authName" placeholder="Author Name">
+              <label>Author Name</label>
+            </div>
+            <div class="form-floating col-md-6 mb-1">
+              <input type="text" class="form-control" name="article-orgName" id="article-orgName" placeholder="Publisher Organization Name">
+              <label>Publisher Organization Name</label>
+            </div>
+            <div class="form-floating col-md-4 mb-1">
+              <input type="text" class="form-control" name="article-publishDate" id="article-publishDate" placeholder="Published Date">
+              <label>Published Date</label>
+            </div>
+            <div class="form-floating col-md-4 mb-1">
+              <input type="text" class="form-control" name="article-createDate" id="article-createDate" placeholder="Created Date">
+              <label>Created Date</label>
+            </div>
+            <div class="form-floating col-md-4 mb-1">
+              <input type="text" class="form-control" name="article-modDate" id="article-modDate" placeholder="Modified Date">
+              <label>Modified Date</label>
+            </div>
+            <div class="form-floating col-md-12 mb-1">
+              <input type="text" class="form-control" name="article-desc" id="article-desc" placeholder="Description">
+              <label>Description</label>
+            </div>
+            <div class="form-floating col-md-12 mb-1">
+              <input type="text" class="form-control" name="article-body" id="article-body" placeholder="Body">
+              <label>Body</label>
+            </div>
+          </form>
+        </div>
+        <div class="bclist form">
+          <form name="bc" id="bcform">
+            <span class="bcgen-item row">
+              <h3>Breadcrumb</h3>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control site-url" name="bc-id" id="bc-id" placeholder="Id">
+                <label>Id</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input value="Main Navigation" type="text" class="form-control" name="bc-name" id="bc-name" placeholder="Name">
+                <label>Breadcrumb Name</label>
+              </div>
+            </span>
+            <span class="bclist-item row" id="bc-item1">
+              <hr />
+              <div class="form-floating col-md-6 mb-1">
+                <input value="1" type="text" class="form-control bc-item-position1" name="bc-item-position1" id="bc-item-position1" placeholder="Item Position">
+                <label>Item Position</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control site-url bc-item-id1" name="bc-item-id1" id="bc-item-id1" placeholder="Item Id">
+                <label>Item Id</label>
+              </div>
+              <div class="form-floating col-md-12 mb-1">
+                <input value="Home" type="text" class="form-control bc-item-name1" name="bc-item-name1" id="bc-item-name1" placeholder="Item Name">
+                <label>Item Name</label>
+              </div>
+              <div class="form-floating col-md-12 mb-1">
+                <input type="text" class="form-control bc-item-description1" name="bc-item-description1" id="bc-item-description1" placeholder="Item Description">
+                <label>Description</label>
+              </div>
+            </span>
+            <div>
+              <input type="button" class="cloneButton" data-form="bc-item" data-schema="bc-schema-item" value="+ ADD URL" />
+            </div>
+          </form>
+        </div>
+        <div class="product form">
+          <form id="product-form" name="product">
+            <span class="product-general row">
+              <h3>Product</h3>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control" name="product-name" id="product-name" placeholder="Product Name">
+                <label>Product Name</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control" name="product-image" id="product-image" placeholder="Product Image URL">
+                <label>Product Image URL</label>
+              </div>
+              <div class="form-floating col-md-12 mb-1">
+                <input type="text" class="form-control" name="product-description" id="product-description" placeholder="Product Description">
+                <label>Product Description</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control" name="product-price" id="product-price" placeholder="Product Price">
+                <label>Product Offer Price</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input value="USD" type="text" class="form-control" name="product-currency" id="product-currency" placeholder="Product Currency">
+                <label>Product Offer Currency</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control" name="product-rating" id="product-rating" placeholder="Aggregate Rating">
+                <label>Aggregate Rating</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control" name="product-rating-count" id="product-rating-count" placeholder="Product Rating Count">
+                <label>Num of Ratings</label>
+              </div>
+            </span>
+            <span class="row product-review1" id="product-review1">
+              <hr />
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control product-review-author1" name="product-review-author1" id="product-review-author1" placeholder="Author">
+                <label>Author</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control product-review-date1" name="product-review-date1" id="product-review-date1" placeholder="Date">
+                <label>Date</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control product-review-body1" name="product-review-body1" id="product-review-body1" placeholder="Body">
+                <label>Body</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control product-review-best1" name="product-review-best1" id="product-review-best1" placeholder="Best Value">
+                <label>Best Rating</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control product-review-value1" name="product-review-value1" id="product-review-value1" placeholder="Rating">
+                <label>Rating</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control product-review-worst1" name="product-review-worst1" id="product-review-worst1" placeholder="Worst Value">
+                <label>Worst Rating</label>
+              </div>
+            </span>
+            <div>
+              <input type="button"  class="cloneButton" data-form="product-review" data-schema="product-schema-review" value="+ ADD Review" />
+            </div>
+          </form>
+        </div>
+        <div class="service form">
+          <form name="service" id="service-form">
+            <span class="service-type-container row">
+              <h3>Service</h3>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control" name="service-type" id="service-type" placeholder="Service ">
+                <label>Service Type</label>
+              </div>
+            </span>
+            <span class="area-served row area-served-dup1" id="area-served-dup1">
+              <hr />
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control area-served-type1" name="area-served-type1" id="area-served-type1" placeholder="Service ">
+                <label>Area Served Type</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control area-served-name1" name="area-served-name1" id="area-served-name1" placeholder="Service ">
+                <label>Area Served Name</label>
+              </div>
+              <span class="area-served-url1-1" id="area-served-url1-1">
+                <div class="form-floating col-md-12 mb-1">
+                  <input type="text" class="form-control sub-dup area-served-link1-1" name="area-served-link1-1" id="area-served-link1-1" placeholder="Service sameAs">
+                  <label>Area Served URL</label>
+                </div>
+              </span>
+              <div>
+                <input type="button" class="cloneButton" data-form="area-served-url1-" data-schema="area-schema-served-url1-" value="+ ADD URL" />
+              </div>
+            </span>
+            <div>
+              <input type="button" class="cloneButton" data-form="area-served-dup" data-schema="area-schema-served-dup" value="+ ADD Area" />
+            </div>
+          </form>
+        </div>
+        <div class="webpage form">
+          <form name="webpage" id="webpage-form">
+            <span class="webpage-container row">
+              <h3>Web Page</h3>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control" name="webpage-id" id="webpage-id" placeholder="#webpage" value="#webpage">
+                <label>Page ID</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control" name="webpage-name" id="webpage-name" placeholder="Page Name">
+                <label>Page Name</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control site-url" name="webpage-siteId" id="webpage-siteId" placeholder="Site Id">
+                <label>isPartOf Site Id</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control" name="webpage-siteName" id="webpage-siteName" placeholder="Site Name">
+                <label>Site Name</label>
+              </div>
+            </span>
+            <span class="webpage-container row">
+              <hr />
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control" name="webpage-headline" id="webpage-headline" placeholder="Headline">
+                <label>Headline</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control" name="webpage-altHeadline" id="webpage-altHeadline" placeholder="Alt Headline">
+                <label>Alt Headline</label>
+              </div>
+              <div class="form-floating col-md-12 mb-1">
+                <input type="text" class="form-control" name="webpage-about" id="webpage-about" placeholder="About">
+                <label>About</label>
+              </div>
+            </span>
+            <span class="webpage-container row">
+              <hr />
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control" name="webpage-imageLink" id="webpage-imageLink" placeholder="Main Image Link">
+                <label>Main Image Link</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control" name="webpage-imageName" id="webpage-imageName" placeholder="Image Name">
+                <label>Image Name</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control" name="webpage-imageCaption" id="webpage-imageCaption" placeholder="Image Caption">
+                <label>Image Caption</label>
+              </div>
+              <div class="form-floating col-md-3 mb-1">
+                <input type="text" class="form-control" name="webpage-imageWidth" id="webpage-imageWidth" placeholder="Image Width">
+                <label>Image Width</label>
+              </div>
+              <div class="form-floating col-md-3 mb-1">
+                <input type="text" class="form-control" name="webpage-imageHeight" id="webpage-imageHeight" placeholder="Image Height">
+                <label>Image Height</label>
+              </div>
+            </span>
+            <span class="webpage-container row">
+              <hr />
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control" name="webpage-published" id="webpage-published" placeholder="datePublished">
+                <label>Date Published</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control" name="webpage-modified" id="webpage-modified" placeholder="Date Modified">
+                <label>Date Modified</label>
+              </div>
+              <div class="form-floating col-md-6 mb-1">
+                <input type="text" class="form-control" name="webpage-description" id="webpage-description" placeholder="Description">
+                <label>Description</label>
+              </div>
+            </span>
+          </form>
+        </div>
+        <div class="faqpage form">
+          <form name="faqpage" id="faqpage-form">
+            <span class="faqpage-container row">
+              <h3>FAQ Page Questions</h3>
+              <span class="faq-dup1" id="faq-dup1">
+                <hr />
+                <div class="form-floating col-md-12 mb-1">
+                  <input type="text" class="form-control faqpage-question1" name="faqpage-question1" id="faqpage-question1" placeholder="FAQ">
+                  <label>Question</label>
+                </div>
+                <div class="form-floating col-md-12 mb-1">
+                  <input type="text" class="form-control faqpage-answer1" name="faqpage-answer1" id="faqpage-answer1" placeholder="Answer">
+                  <label>Answer</label>
+                </div>
+              </span>
+              <div>
+                <input type="button" class="cloneButton" data-form="faq-dup" data-schema="faq-schema-dup" value="+ ADD URL" />
+              </div>
+            </span>
+          </form>
+        </div>
+      </div>
+    <div class="col-md-4 generated-schema" id="schema">
+      <img alt="Download JSON Icon" class="dlicon" src="download.jpg" />
+<!--Formatting is shifted left so I can correctly format the json download file-->
+<pre class="download dlnoshow">
+{
+  "@context": {
+    "@vocab": "http://schema.org/"
+  },
+  "@graph": [</pre><pre class="generated download article"> 
+    {
+      "@type": "Article",
+      "headline": "<span class='article-headline nodl'> </span>",
+      "alternativeHeadline": "<span class='article-altHeadline'> </span>",
+      "image":  {
+      "@type": "ImageObject",
+        "@id": "<span class='site-url'> </span>/<span class='article-imageURL'> </span>#image",
+        "url": "<span class='article-imageURL'> </span>",
+        "name": "<span class='article-imageName'> </span>",
+        "caption": "<span class='article-imageCap'> </span>",
+        "width":"<span class='article-imageW'> </span>",
+        "height":"<span class='article-imageH'> </span>"
+      },
+        "keywords": "<span class='article-keywords'> </span>", 
+      "wordcount": "<span class='article-wordcount'> </span>",
+      "author": {
+          "@type": "Organization",
+          "name": "<span class='article-authName'> </span>",
+          "url": "<span class='site-url'> </span>/"
+        },
+      "publisher": {
+          "@type": "Organization",
+          "name": "<span class='article-orgName'> </span>",
+          "url": "<span class='site-url'> </span>/"
+        },
+      "url": "<span class='site-url'> </span>/<span class='site-urlHierarchy'> </span>/",
+      "datePublished": "<span class='article-publishDate'> </span>",
+      "dateCreated": "<span class='article-createDate'> </span>",
+      "dateModified": "<span class='article-modDate'> </span>",
+      "description": "<span class='article-desc'> </span>",
+      "articleBody": "<span class='article-body'> </span>" 
+    }</pre><pre class="generated download bclist"> 
+    {
+      "@type": "BreadcrumbList",
+      "@id": "<span class='site-url bc-id'> </span>/<span class='site-urlHierarchy'> </span>/#breadcrumb",
+      "name": "<span class='bc-name'>Main Navigation</span>",
+      "itemListElement": [<span class='plain bc-schema-item1' id="bc-schema-item1">
+        {
+          "@type": "ListItem",
+          "position": <span class='bc-item-position1'>1</span>,
+          "item": {
+            "@id": "<span class='site-url bc-item-id1'> </span>/",
+            "name": "<span class='bc-item-name1'>Home</span>",
+            "description:": "<span class='bc-item-description1'> </span>"
+          }
+        }</span>
+      ]
+    }</pre><pre class="generated download product"> 
+    {
+      "@type": "Product",
+      "name": "<span class='product-name'> </span>",
+      "image": "<span class='product-image'> </span>",
+      "description": "<span class='product-description'> </span>",
+      "offers": {
+        "@type": "Offer",
+        "price": "<span class='product-price'> </span>",
+        "priceCurrency": "<span class='product-currency'>USD</span>"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "<span class='product-rating'> </span>",
+        "reviewCount": "<span class='product-rating-count'> </span>"
+      },
+      "review": [<span class="plain product-schema-review1" id="product-schema-review1">
+        {
+          "@type": "Review",
+          "author": "<span class='product-review-author1'> </span>",
+          "datePublished": "<span class='product-review-date1'> </span>",
+          "reviewBody": "<span class='product-review-body1'> </span>",
+          "reviewRating": {
+            "@type": "Rating",
+            "bestRating": "<span class='product-review-best1'> </span>",
+            "ratingValue": "<span class='product-review-value1'> </span>",
+            "worstRating": "<span class='product-review-worst1'> </span>"
+          }
+        }</span>
+      ]
+    }</pre><pre class="generated download service"> 
+    {
+      "@type": "Service",
+      "serviceType": "<span class='service-type'> </span>",
+      "areaServed": [<span class="plain area-schema-served-dup1" id="area-schema-served-dup1">
+        {
+          "@type": "<span class='area-served-type1'> </span>",
+          "name": "<span class='area-served-name1'> </span>",
+          "sameAs": [<span class="area-schema-served-url1-1" id="area-schema-served-url1-1">
+            "<span><span class='sub-dup area-served-link1-1'> </span></span>"</span>
+          ]
+        }</span>
+      ]
+    }</pre><pre class="generated download webpage"> 
+    {
+      "@type": "WebPage",
+      "@id": "<span class='site-url'> </span>/<span class='site-urlHierarchy'> </span>/<span class='webpage-id'>#webpage</span>",
+      "name": "<span class='webpage-name'> </span>",
+      "url": "<span class='site-url'> </span>/<span class='site-urlHierarchy'> </span>/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "<span class='site-url'> </span>/<span class='webpage-siteId'>#website</span>",
+        "name": "<span class='webpage-siteName'> </span>"
+      },
+      "headline": "<span class='webpage-headline'> </span>",
+      "alternativeHeadline": "<span class='webpage-altHeadline'> </span>",
+      "about": {
+        "name": "<span class='webpage-about'> </span>"
+      },
+      "primaryImageOfPage": {
+        "@id": "<span class='site-url'> </span>/<span class='webpage-imageLink'> </span>#primaryimage",
+        "url": "<span class='site-url'> </span>/<span class='webpage-imageLink'> </span>",
+        "name": "<span class='webpage-imageName'> </span>",
+        "caption": "<span class='webpage-imageCaption'> </span>",
+        "width": "<span class='webpage-imageWidth'> </span>",
+        "height": "<span class='webpage-imageHeight'> </span>"
+      },
+      "datePublished": "<span class='webpage-published'> </span>",
+      "dateModified": "<span class='webpage-modified'> </span>",
+      "description": "<span class='webpage-description'> </span>",
+      "inLanguage": "en-US",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "<span class='site-url'> </span>/<span class='site-urlHierarchy'> </span>/"
+          ]
+        }
+      ]
+    }</pre><pre class="generated download faqpage"> 
+    {
+      "@type": "FAQpage",
+      "mainEntity": [<span class="plain faq-schema-dup1" id="faq-schema-dup1">
+        {
+          "@type": "Question",
+          "name": "<span class='faqpage-question1'> </span>",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "<span class='faqpage-answer1'> </span>"
+          }
+        }</span>
+      ]
+    }</pre><pre class="download dlnoshow final">
+  ]
+}
+</pre><!--Formatting is shifted left so I can correctly format the json download file-->
+    </div>
+  </div>
+  </main>
+
+  <footer class="mt-auto text-white-50">
+    <p>Created by Just A Web Company</p>
+  </footer>
+</div>
+  </body>
+
+  <script src="js/schema.js"></script>
+</html>
